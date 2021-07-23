@@ -7,6 +7,8 @@ import java.util.List;
 
 public interface ReviewRepository extends CrudRepository<Review, Long> {
 
+    List<Review> findAll();
+
     Review save(Review review);
 
     List<Review> findAllByRestaurantId(long restaurantId);

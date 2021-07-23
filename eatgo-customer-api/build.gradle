@@ -19,6 +19,8 @@ repositories {
 }
 
 dependencies {
+    implementation project(':eatgo-common')
+
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
     implementation 'com.h2database:h2'
@@ -31,14 +33,6 @@ dependencies {
 
     annotationProcessor 'org.projectlombok:lombok'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
-}
-
-jar{
-    enabled = true
-}
-
-bootJar{
-    enabled = false
 }
 
 test {
