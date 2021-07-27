@@ -23,9 +23,11 @@ public class RestaurantService {
         this.reviewRepository = reviewRepository;
     }
 
-    public List<Restaurant> getRestaurants(){
-        List<Restaurant> restaurants = restaurantRepository.findAll();
+    public List<Restaurant> getRestaurants(String region, long categotyId){
+        //TODO: categoryId 사용.
+        List<Restaurant> restaurants = restaurantRepository.findAllByAddressContainingAndCategoryId(region, categotyId);
         return restaurants;
+
     }
 
     public Restaurant getRestaurant(Long id){
